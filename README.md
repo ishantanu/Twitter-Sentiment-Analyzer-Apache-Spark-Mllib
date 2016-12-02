@@ -75,7 +75,7 @@ Also, please check [`build.sbt`](build.sbt) for more information on the various 
 ### Env Setup
 If not already installed, please install [Docker](https://docs.docker.com/engine/installation/ "» Docker Installation steps") on your machine.
 
-We will be using the accompanying [Docker image](https://hub.docker.com/r/p7hb/p7hb-docker-mllib-twitter-sentiment "» Docker image on Docker Hub") created for this project.
+We will be using the accompanying [Docker image](https://hub.docker.com/r/ishantanu16/docker-twitter-sentiment-analyzer/ "» Docker image on Docker Hub") created for this project.
 
 ### Resources for the Docker machine if running using Virtualbox.
 * Stop docker-machine. `docker-machine stop default`
@@ -96,7 +96,7 @@ We will be using the accompanying [Docker image](https://hub.docker.com/r/p7hb/p
 	* If the image doesn't exist locally, the Docker Client will first fetch the image from the registry and then run the image.
 	* After image boots up and completes the setup process, you will land into a bash shell waiting for your input.
 
-`docker run -ti -p 4040:4040 -p 8080:8080 -p 8081:8081 -p 9999:9999 -h spark --name=spark ishantanu16/Spark-MLlib-Twitter-Sentiment:1.6.2`
+`docker run -ti -p 4040:4040 -p 8080:8080 -p 8081:8081 -p 9999:9999 -h spark --name=spark ishantanu16/docker-twitter-sentiment-analyzer:1.6.2`
 
 Please note:
 
@@ -112,7 +112,7 @@ Please note:
 	* If you did not create a Twitter App before, then please create a new Twitter App on [Twitter Developer Page](https://dev.twitter.com/apps), where you will get all the required values of `application.conf`.
 
 ### Execute Spark Streaming job for sentiment prediction
-* Please execute [`/root/exec_spark_jobs.sh`](https://github.com/iamShantanu101/Docker-MLlib-Twitter-Sentiment/blob/master/exec_spark_jobs.sh) in the console after updating the Twitter App OAuth credentials in `application.conf`.
+* Please execute [`/root/run_spark_jobs.sh`](https://github.com/iamShantanu101/docker-twitter-sentiment-analyzer/blob/master/run_spark_jobs.sh) in the console after updating the Twitter App OAuth credentials in `application.conf`.
 	* This script first starts Spark services [Spark Master and Spark Slave] and then launches Spark jobs one after the other.
 * This might take sometime as SBT will initiate a download and setup of all the required packages from Maven Central Repo and Typesafe repo as required.
 
@@ -147,7 +147,7 @@ Please consider these steps only if you are an expert on Docker, Spark and ecosy
 	`docker run -ti -p 4040:4040 -p 8080:8080 -p 8081:8081 -p 9999:9999 -h spark --name=spark ishantanu16/docker-twitter-sentiment-analyzer:1.6.2`
 * Update [`application.conf`](src/main/resources/application.conf#L8-11  "» config file change required") to include your Twitter App OAuth credentials.
 * Execute: `/root/exec_spark_jobs.sh`
-	* Might have to wait for ~10 minutes or so [depending on your internet speed].
+	* Might have to wait for ~15 minutes or so [depending on your internet speed].
 * Point your browser on the host machine to [`http://192.168.99.100:9999`](http://192.168.99.100:9999 "» launch viz app") for visualization.
 
 
@@ -158,7 +158,7 @@ Please check [Twitter Developer page](https://dev.twitter.com/apps "» create Tw
 ## Helpful links
 1. Docker Image on Docker Hub Registry: [https://hub.docker.com/r/iamShantanu101/docker-twitter-sentiment-analyzer/](https://hub.docker.com/r/iamShantanu101/docker-twitter-sentiment-analyzer/).
 2. GitHub URL for source code of the project: [https://github.com/iamShantanu101/Twitter-Sentiment-Analyzer-Apache-Spark-Mllib](https://github.com/iamShantanu101/Twitter-Sentiment-Analyzer-Apache-Spark-Mllib).
-5. Dockerfile GitHub repo: [https://github.com/iamShantanu101/docker-twitter-sentiment-analyzer](https://github.com/iamShantanu101/docker--twitter-sentiment-analyzer).
+5. Dockerfile GitHub repo: [https://github.com/iamShantanu101/docker-twitter-sentiment-analyzer](https://github.com/iamShantanu101/docker-twitter-sentiment-analyzer).
 
 
 ## Problems? Questions? Contributions? [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)]
