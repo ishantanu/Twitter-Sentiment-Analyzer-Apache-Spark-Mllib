@@ -38,8 +38,6 @@ Also, a Docker Image is available on [Docker Hub](https://hub.docker.com/r/p7hb/
 ### Docker Image and Dockerfile
 * Docker image hosted on [Docker Hub](https://hub.docker.com/r/p7hb/p7hb-docker-mllib-twitter-sentiment "Docker Hub URL for the image") is available with the complete environment and dependencies installed. 
 * Dockerfile and other supporting files are also available on [GitHub](https://github.com/P7h/p7hb-docker-mllib-twitter-sentiment "» GitHub URL for code of the image").
-* For detailed info on this project, please check the [blogpost](http://P7h.org/blog/2016/08/21/spark-twitter-sentiment/).
-
 
 ## Dependencies
 
